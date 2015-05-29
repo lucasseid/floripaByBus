@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Floripa By Bus - Public Transp. Data</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, height=device-height">
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+    </style>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+
+</head>
+
+<body>
+
+    <div data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h1>Routes</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div>
+                <input id="streetname" type="text" placeholder="Enter a street name to search">
+                <button onclick="fetch_and_display_routes();">Search</button>
+            </div>
+            <div style="margin-top:45px;">
+                 <ul data-role="listview" id="routes">
+            </div>
+            </ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h1>Made by Lucas Ivan Seidenfus</h1>
+        </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/index.js"></script>
+    <script src="xdk/init-dev.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+</body>
+</html>
