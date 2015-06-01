@@ -10,6 +10,13 @@
         /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
         @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
         @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+        .h2-wrap{
+            white-space: normal !important;
+            padding-right: 20px;
+        }
+        .ui-table-columntoggle-btn {
+            display: none !important;
+        }
     </style>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
 
@@ -17,7 +24,7 @@
 
 <body>
 
-    <div data-role="page">
+    <div data-role="page" id="pageone">
         <div data-role="header" data-position="fixed">
             <h1>Routes</h1>
         </div>
@@ -33,14 +40,65 @@
             </ul>
         </div>
 
-        <div data-role="footer" data-position="fixed">
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <h1>Made by Lucas Ivan Seidenfus</h1>
+        </div>
+    </div>
+
+    <div data-role="page" id="pagetwo">
+        <div data-role="header" data-add-back-btn="true" data-position="fixed">
+            <h1>Route Details</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div data-role="tabs" id="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#stops-tab" id="stops-btn" data-ajax="false">Stops</a></li>
+                        <li><a href="#departures-tab" data-ajax="false">Departures</a></li>
+                    </ul>
+                </div>
+                <div id="stops-tab" class="ui-body-d ui-content">
+                    <ol data-role="listview" data-inset="true" id="stops-list"></ol>
+                </div>
+                <div id="departures-tab" class="ui-body-d ui-content">
+                    <div data-role="collapsible" id="weekday-coll">
+                        <h4>Weekday</h4>
+                        <table data-role="table" id="weekday-table"
+                          data-mode="columntoggle" class="ui-responsive table-stroke">
+                        <tbody id="tbody-weekday">
+                        </tbody>
+                    </table>
+                    </div>
+                     <div data-role="collapsible" id="saturday-coll">
+                        <h4>Saturday</h4>
+                        <table data-role="table" id="saturday-table"
+                               data-mode="columntoggle" class="ui-responsive table-stroke">
+                            <tbody id="tbody-saturday">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div data-role="collapsible" id="sunday-coll">
+                        <h4>Sunday</h4>
+                        <table data-role="table" id="sunday-table"
+                               data-mode="columntoggle" class="ui-responsive table-stroke">
+                            <tbody id="tbody-sunday">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
             <h1>Made by Lucas Ivan Seidenfus</h1>
         </div>
     </div>
 
     <script src="cordova.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/util.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/lib/dateFormat.min.js"></script>
     <script src="xdk/init-dev.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>

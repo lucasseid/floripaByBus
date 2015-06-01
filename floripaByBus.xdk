@@ -4,7 +4,7 @@
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "projectGuid": "1d94b97a-0677-4cfe-9592-fe1ede9b7563",
-      "lastModifiedDate": 1432928034800,
+      "lastModifiedDate": 1432933621501,
       "creationDate": 1432928034714
     },
     "XDK-app-designer": "false",
@@ -72,7 +72,8 @@
         "preferences_": {
           "android-minSdkVersion": "10",
           "android-targetSdkVersion": "19",
-          "android-installLocation": "auto"
+          "android-installLocation": "auto",
+          "Fullscreen": false
         },
         "isActive_": true,
         "appName_": "floripaByBus",
