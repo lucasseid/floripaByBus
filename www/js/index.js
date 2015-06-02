@@ -1,3 +1,8 @@
+/*
+As general rule you should observe the code format patterns for language you choose.
+In this case you're using javascript which the pattern is using camelCase style for functions, variables, etc.
+You mix camelCase and snake_case in your code, why is that?
+*/
 function fetch_and_display_routes()
 {
     var xhr = get_post_by_endpoint("findRoutesByStopName/run");
@@ -19,6 +24,14 @@ function fetch_and_display_routes()
             var id = value.id;
             var dateString = "";
             if(!empty(value.lastModifiedDate)){
+                /*
+                While running the app on an Android device I noticed that just below the route name in the 
+                route list, something related to a date was being shown, but I couldn't understand that since
+                it was saying: "more than 5 weeks ago". 
+                I think that at least you missed something here, for instance, it would be more meaningful
+                if written like this: "Last update: more than..." or even "Updated more than...".
+                Special attention to details is very important.
+                */
                 dateString = DateFormat.format.prettyDate(value.lastModifiedDate);
             }
 
@@ -82,6 +95,7 @@ function open_route_detail(link)
 
         });
 
+        //what about more meaningful variable names?
         var contWe = 0;
         var htmlWe = "";
         $.each(arr_we, function( index, value ){
@@ -111,12 +125,14 @@ function open_route_detail(link)
                     htmlSa += "</tr>";
                 }
             });
+            //what about more meaningful variable names?
             $("#tbody-saturday").html(htmlSa);
             $("#saturday-coll").show();
         }else{
             $("#saturday-coll").hide();
         }
 
+        //what about more meaningful variable names?
         if(!empty(arr_su)){
             var contSu = 0;
             var htmlSu = "";
